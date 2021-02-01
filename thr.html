@@ -1,0 +1,423 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>True Nightly Rate (TNR)™</title>
+  <style media="screen">
+    body {
+      color: #283139;
+      padding: 0;
+      margin: 0 16px;
+      font-size: 18px;
+      line-height: 32px;
+      font-family: Poppins, Sans-serif;
+    }
+
+    @media (max-width: 960px) {
+      body {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    .navi {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      flex-flow: row nowrap;
+      background: #fff;
+      position: fixed;
+      height: 64px;
+      align-items: center;
+      justify-content: space-between;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .logo {
+      margin: -11px 0 0 16px;
+    }
+
+    .logo img {
+      height: 32px;
+    }
+
+    .links {
+      margin: 0 16px 0 0;
+    }
+
+    .links .button {
+      color: #fff;
+      background: linear-gradient(90deg, #FF005A 0%, #FF7600 97.55%);
+      border-radius: 8px;
+      text-decoration: none;
+      padding: 8px 20px;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 500;
+    }
+
+    .header {
+      background: #EFF5F7;
+      max-width: 1368px;
+      min-width: 256px;
+      margin: 64px auto 0;
+      padding: 112px 16px;
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .headerTitle {
+      max-width: 808px;
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 40px;
+      line-height: 48px;
+      font-weight: 800;
+      margin: 0 0 24px;
+      padding: 0;
+    }
+
+    @media (max-width: 960px) {
+      h1 {
+        font-size: 32px;
+        line-height: 40px;
+      }
+    }
+
+    hr {
+      width: 80px;
+      margin: 80px auto;
+      border: 2px solid #283139;
+      border-radius: 4px;
+    }
+
+    h2 {
+      font-size: 32px;
+      line-height: 40px;
+      font-weight: 800;
+      margin: 0 0 40px;
+      padding: 0;
+    }
+
+    @media (max-width: 960px) {
+      h2 {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+
+    h3 {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 800;
+      margin: 0 0 8px;
+      padding: 0;
+    }
+
+    @media (max-width: 960px) {
+      h3 {
+        font-size: 18px;
+        line-height: 32px;
+      }
+    }
+
+    .contentAirbnb {
+      display: flex;
+      flex-flow: row wrap;
+      max-width: 1224px;
+      margin: 0 auto 80px;
+    }
+
+    .contentImg {
+      flex: 1 1 50%;
+      width: 50%;
+      min-width: 256px;
+    }
+
+    .contentImg img {
+      width: 100%;
+    }
+
+    .contentVrbo {
+      display: flex;
+      flex-flow: row-reverse wrap;
+      max-width: 1224px;
+      margin: 0 auto;
+    }
+
+    .contentText {
+      flex: 1 1 50%;
+      width: 50%;
+      font-size: 32px;
+      line-height: 40px;
+      text-align: left;
+      margin: 80px 0 0;
+    }
+
+    @media (max-width: 960px) {
+      .contentText {
+        font-size: 24px;
+        line-height: 32px;
+        margin: 32px 0 0;
+      }
+    }
+
+    .contentText p {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .contentText .tnr {
+      width: 80%;
+      margin: 32px auto 0;
+    }
+
+    .tnrHeader {
+      font-weight: 800;
+      font-size: 22px;
+      line-height: 32px;
+      display: block;
+    }
+
+    @media (max-width: 960px) {
+      .tnrHeader {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    .tnrPrice {
+      font-weight: 800;
+      font-size: 48px;
+      line-height: 48px;
+    }
+
+    @media (max-width: 960px) {
+      .tnrPrice {
+        font-size: 32px;
+        line-height: 32px;
+      }
+    }
+
+    .tnrCalc {
+      font-size: 32px;
+      line-height: 48px;
+      color: #3D546A;
+    }
+
+    @media (max-width: 960px) {
+      .tnrCalc {
+        font-size: 18px;
+        line-height: 32px;
+      }
+    }
+
+    .tnrDiff {
+      color: #FF0F4F;
+      display: block;
+      font-size: 18px;
+      line-height: 32px;
+    }
+
+    .hichee {
+      max-width: 1400px;
+      margin: 80px auto;
+      text-align: center;
+    }
+
+    .hicheePoints {
+      display: flex;
+      flex-flow: row wrap;
+      max-width: 864px;
+      margin: 0 auto;
+      justify-content: space-between;
+      align-items: flex-start;
+      text-align: center;
+    }
+
+    .hicheePoint {
+      margin: 0 auto 32px;
+      text-align: left;
+      flex: 0 1 416px;
+      width: 50%;
+      min-width: 256px;
+    }
+
+    .point1, .point2 {
+      margin-bottom: 16px;
+    }
+
+    .point1 img {
+      width: 100%;
+    }
+
+    .point2  img{
+      width: 100%;
+    }
+
+    .goTo {
+      background: url(./properties.jpg) center no-repeat;
+      max-width: 1368px;
+      margin: 0 auto;
+      padding: 112px 16px;
+      border-radius: 16px;
+      text-align: center;
+      background-size: cover;
+    }
+
+    .goToText {
+      max-width: 808px;
+      margin: 0 auto;
+      padding: 32px 32px 48px;
+      background: rgba(255,255,255,0.92);
+      border-radius: 16px;
+    }
+
+    .goToText .button {
+      color: #fff;
+      background: linear-gradient(90deg, #FF005A 0%, #FF7600 97.55%);
+      border-radius: 8px;
+      text-decoration: none;
+      padding: 16px 32px;
+      font-weight: 500;
+    }
+
+    .footer {
+      color: #3D546A;
+      font-size: 16px;
+      line-height: 24px;
+      margin: 80px auto;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="navi">
+    <div class="logo">
+      <img src="logo.svg" />
+    </div>
+    <div class="links">
+      <a href="https://hichee.com" class="button">
+        Go to HiChee
+      </a>
+    </div>
+  </div>
+  <div class="header">
+    <div class="headerTitle">
+      <h1>
+        True Nightly Rate (TNR)™
+      </h1>
+      <p>
+        HiChee’s True Nighty Rate (TNR)™ lets you see fee and tax inclusive nightly rates on the map search and detail pages. Don't be misled by seemingly low “nightly room rates.” Know what you’re truly paying per night without extra clicks and tedious math!
+      </p>
+    </div>
+    <hr />
+    <div class="headerContent">
+      <h2>
+        Let’s Book a Place for 7 Nights...
+      </h2>
+      <div class="contentAirbnb">
+        <div class="contentImg">
+          <img src="airbnb.png" />
+        </div>
+        <div class="contentText">
+          <p>
+            ...and see how Airbnb and misleeds bookers
+          </p>
+          <div class="tnr">
+            <span class="tnrHeader">
+              True Nightly Rate™
+            </span>
+            <span class="tnrPrice">
+              $485
+            </span>
+            <span class="tnrCalc">
+              = $3,397 / 7
+            </span>
+            <span class="tnrDiff">
+              45% higher!
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="contentVrbo">
+        <div class="contentImg">
+          <img src="vrbo.png" />
+        </div>
+        <div class="contentText">
+          <p>
+            Vrbo does the same and tricks with prices
+          </p>
+          <div class="tnr">
+            <span class="tnrHeader">
+              True Nightly Rate™
+            </span>
+            <span class="tnrPrice">
+              $452
+            </span>
+            <span class="tnrCalc">
+              = $3,163 / 7
+            </span>
+            <span class="tnrDiff">
+              61% higher!
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hichee">
+    <h2>
+      How does the TNR work on HiChee.com?
+    </h2>
+    <div class="hicheePoints">
+      <div class="hicheePoint">
+        <div class="point1">
+          <img src="point1.png" />
+        </div>
+        <h3>
+          Got Selected Dates
+        </h3>
+        <p>
+          When you select dates, and you see totals, the prices are the real TNR.
+        </p>
+      </div>
+      <div class="hicheePoint">
+        <div class="point2">
+          <img src="point2.png" />
+        </div>
+        <h3>
+          No Dates Selected
+        </h3>
+        <p>
+          If you don't select dates, then a TNR is based on some open calendar dates so that all fees and taxes can be calculated and included in the rate.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="goTo">
+    <div class="goToText">
+      <h2>
+        Do You Want to Search for Vacation Rental s with True Nightly Rates™?
+      </h2>
+      <a href="https://hichee.com" class="button">
+        Go to HiChee
+      </a>
+    </div>
+  </div>
+  <div class="footer">
+    <span>
+      © 2021 HiChee.com. All rights reserved.
+    </span>
+  </div>
+</body>
+</html>
